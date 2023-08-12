@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .red{
+            width: 150px;
+            height: 150px;
+            background-color: red;
+        }
+
+        .blue{
+            width: 150px;
+            height: 150px;
+            background-color: blue;
+        }
+
+        .green{
+            width: 150px;
+            height: 150px;
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="color" class="red">
+        <button onclick="mudar()">My Click</button>
+
+    </div>
+    <script>
+
+        function mudar(){
+
+            /*
+            querySelector = all
+            getElementById = only Ids
+            */
+
+            const colorido = document.querySelector('#color');
+
+            if ( colorido.classList.contains('red')){
+                colorido.classList.replace("red", "blue"); 
+            } else if (colorido.classList.contains('blue')){
+                colorido.classList.replace("blue", "green");
+            } else {
+                colorido.classList.replace("green","red");
+            }
+            
+            //document.getElementById('color').classList.replace("red", "blue");
+        
+        }
+
+        /*
+
+        if (condition == true) {
+
+        } 
+        
+        else if (condition2 == true) {
+
+        }
+        else {
+
+        }
+        
+
+        classList.add("")
+        classList.remove("")
+        classList.replace("")
+        classList.contains("")
+
+
+        */
+
+    </script>
+</body>

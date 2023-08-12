@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<img id="animal" src="img/cat.jpeg" alt="cat" data-type="cat">
+<br>
+<button onclick="ChangeImage('img/dog.jpg', 'dog animal')">change image to dog</button>
+<button onclick="ChangeImage('img/cat.jpeg', 'cat animal')">change image to cat</button>
+<button onclick="GetTypeAnimal()">O animal é um ...?</button>
+
+<body>
+    <script>
+
+        function ChangeImage(anil, type){
+
+            let animal = document.querySelector("#animal");
+            animal.setAttribute("src", anil);
+            animal.setAttribute("data-type", type);
+
+        }
+
+
+        function GetTypeAnimal(){
+            
+            let animal = document.querySelector("#animal");
+            let tipo_de_animal = animal.getAttribute("data-type");
+            alert("O animal atual é um " + tipo_de_animal );
+
+        }
+
+
+
+        /*
+
+        set = setar um valor;
+        get = pegar um valor;
+
+        setAttribute("nome do atributo","novo valor do atributo");
+        getAttribute("nome do atributo");
+        
+        */
+
+
+    </script>
+</body>
+</html>
