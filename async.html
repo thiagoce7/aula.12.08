@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="cep_number" name="cepp">
+    <button id="cep" >Pesquisa</button>
+
+    <div>
+        <h4>Bairro</h4> <h4 id="bairro"></h4> <br>
+        <h4>Logradouro</h4> <h4 id="rua"></h4><br>
+        <h4>Cidade</h4> <h4 id="cidade"></h4><br>
+        <h4>Estado</h4> <h4 id="estado"></h4>
+
+        <style>
+            h4{
+                display: inline;
+            }
+
+        </style>
+
+    </div>
+
+    <script>
+        async function pesquise(){
+
+            var cep_number = document.getElementById('cep_number').value;
+
+          let response = await fetch('https://api.postmon.com.br/v1/cep/' + cep_number)
+          let json = await response.json();
+                document.getElementById('bairro').innerHTML = json.bairro;
+                document.getElementById('rua').innerHTML = json.logradouro;
+                document.getElementById('cidade').innerHTML = json.cidade;
+                document.getElementById('estado').innerHTML = json.estado;
+            alert("ok")
+            
+        }
+
+
+        document.querySelector('#cep').addEventListener('click', pesquise); 
+
+       
+
+
+    </script>
+    
+
+</body>
+</html>
